@@ -1,0 +1,174 @@
+/* Standard ljusläge */
+body {
+    background-color: rgb(218, 218, 218);
+    color: darkgreen;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Stil för knappar */
+button {
+    background-color: #48b94b;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Mörkt läge */
+body.dark-mode {
+    background-color: #2b2b2b;
+    color: #baf3b3;
+}
+
+/* Färgblindläge */
+body.colorblind-mode {
+    color: #04f604;
+}
+
+/* Mörkt läge + färgblindläge */
+body.dark-mode.colorblind-mode {
+    background-color: #2b2b2b;
+    color: greenyellow;
+}
+
+/* Gridlayout för spelbrädet */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-gap: 10px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+/* Cellstil */
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Färger för olika lägen på celler */
+body:not(.dark-mode) .cell {
+    color: #000000;
+}
+
+body.dark-mode .cell {
+    color: #000000;
+}
+
+/* Färger för rätt, närvarande och frånvarande bokstäver i färgblindläge */
+body.colorblind-mode .correct {
+    background-color: #72ff65;
+}
+
+body.colorblind-mode .present {
+    background-color: #ffbb00;
+}
+
+body.colorblind-mode .absent {
+    background-color: #999999;
+}
+
+/* Titel (Wordle 5x6) */
+h1 {
+    color: darkgreen;
+}
+
+/* Tangentbordets stil */
+#keyboard-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    gap: 10px;
+    justify-items: center;
+}
+
+/* Tangenter */
+.key {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.key:hover {
+    background-color: #ddd;
+}
+
+/* Färger för rätt, närvarande och frånvarande bokstäver på tangentbordet */
+.correct {
+    background-color: #15b706;
+}
+
+.present {
+    background-color: #f8cb01;
+}
+
+.absent {
+    background-color: grey;
+}
+
+/* Popup container stil */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Retry container */
+#retry-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#retry-container button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 5px;
+}

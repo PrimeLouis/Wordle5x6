@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle 5x6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Knappar för att växla mellan färgblindläge -->
+    <div class="colorblind-toggle-container">
+        <button id="colorblind-toggle">Byt till färgblindläge</button>
+    </div>
+
+    <!-- Retry container -->
+    <div id="retry-container" style="display: none;">
+        <button onclick="retryGame()">Försök igen</button>
+    </div>
+
+    <!-- Popup för fel input -->
+    <div id="popup-container" class="popup hidden">
+        <div class="popup-content">
+            <p id="popup-message">Skriv in 5 bokstäver!</p>
+            <button onclick="closePopup()">Stäng</button>
+        </div>
+    </div>
+
+    <!-- Popup för ogiltiga ord -->
+    <div id="popup-container" class="popup hidden">
+        <div class="popup-content">
+            <p>Ordet finns inte!</p>
+            <button onclick="closePopup()">Stäng</button>
+        </div>
+    </div>
+
+    <!-- Knappar för att växla mellan mörkt och ljust läge -->
+    <div class="theme-toggle-container">
+        <button id="theme-toggle">Byt till mörkläge</button>
+    </div>
+
+    <!-- Speltitel för spelet -->
+    <h1>Wordle 5x6</h1>
+
+    <!-- Spelbräde där gissningar visas -->
+    <div id="game-board-container">
+        <div id="game-board"></div>
+    </div>
+
+    <!-- Input field for guesses -->
+    <div id="guess-container">
+        <input type="text" id="guess-input" maxlength="5" placeholder="Ange din gissning" />
+    </div>
+
+    <!-- Submit button -->
+    <div id="submit-container">
+        <button onclick="submitGuess()">Svara gissningen</button>
+    </div>
+
+    <div id="keyboard-container">
+        <div id="keyboard"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
